@@ -1,0 +1,57 @@
+// GRID VARIABLES
+// http://gridcalculator.dk - grid calculator
+
+// Change this values to change the size of the grid
+@column-width: 61;
+@gutter-width: 28;
+@columns: 12; 
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width * @columns) + (@gutter-width * @columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: 100%; //makes .column mixin turn into %
+
+
+// GRID MIXINS
+.column(@x,@columns:@columns) {
+	display: inline;
+	float: left;
+	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+	margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
+} 
+
+
+//TYPOGRAPHY
+@font-face {
+	font-family: main-font;
+	src: url("../fonts/Aaargh.ttf")
+}
+ 
+
+@sans-serif: 'main-font', sans-serif;
+@serif: "Plantin", serif;
+
+@main-font: @sans-serif;
+@secondary-font: @serif;
+
+
+// COLOR
+ 
+@orange: #f36b47;
+@lightOrange: #f37b5c;
+@white: #ffffff;
+@black: #000000;
+@lightGray: #9d9c9c;
+@bodyColor: #f9f9f9;
+
+@mainColor: @orange;
+@mainFontColor: @lightGray;
+@secondaryFontColor: @black;
+@footerColor: @lightOrange;
+@hoverColor: #ef3e6b; 
+@h3FontColor: #474747;
+
+@hoverColor: #4bcaff;
+
+
